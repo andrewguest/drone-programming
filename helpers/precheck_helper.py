@@ -36,9 +36,7 @@ async def precheck_connection(drone: System):
             f"[{blue}]Connection state:[/{blue}] [{green}]Connected[/{green}]"
         )
     else:
-        console.print(
-            f"[{blue}]Connection state:[/{blue}] [{red}]Disconnected[/{red}]"
-        )
+        console.print(f"[{blue}]Connection state:[/{blue}] [{red}]Disconnected[/{red}]")
 
 
 async def precheck_gps(drone):
@@ -48,9 +46,7 @@ async def precheck_gps(drone):
     console.print(
         f"[{blue}]Number of GPS satellites:[/{blue}] [{white}]{gps.num_satellites}[/{white}]"
     )
-    console.print(
-        f"[{blue}]GPS fix type:[/{blue}] [{white}]{gps.fix_type}[/{white}]"
-    )
+    console.print(f"[{blue}]GPS fix type:[/{blue}] [{white}]{gps.fix_type}[/{white}]")
 
 
 async def precheck_position(drone):
