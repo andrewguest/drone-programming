@@ -13,7 +13,10 @@ def convert_mph_to_ms(miles_per_hour) -> float:
     Returns:
         float: The converted (and rounded) speed in meters per second.
     """
-    return round((miles_per_hour * 0.44704), 2)
+
+    speed_in_meters_per_second: float = round((miles_per_hour * 0.44704), 2)
+
+    return speed_in_meters_per_second
 
 
 def convert_feet_to_meters(feet) -> float:
@@ -25,7 +28,10 @@ def convert_feet_to_meters(feet) -> float:
     Returns:
         float: The converted (and rounded) height in meters.
     """
-    return round((feet * 0.3048), 2)
+
+    height_in_meters: float = round((feet * 0.3048), 2)
+
+    return height_in_meters
 
 
 def convert_celcius_to_fahrenheit(celcius_temp):

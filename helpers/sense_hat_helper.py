@@ -8,7 +8,6 @@ from sense_hat import SenseHat
 
 from helpers import converters
 
-
 SENSE_HAT = SenseHat()
 
 
@@ -17,7 +16,8 @@ def show_message(message: str, scroll_speed: float = 0.2):
 
     Args:
         message (str): Message to display.
-        scroll_speed (float, optional): The time paused for between shifting the text to the left by one column of pixels. Defaults to 0.2.
+        scroll_speed (float, optional): The time paused for between shifting the
+            text to the left by one column of pixels. Defaults to 0.2.
     """
 
     SENSE_HAT.clear()
@@ -29,24 +29,25 @@ def draw_check_mark(color: Tuple[int, int, int] = (0, 255, 0)):
     """Draw a check mark on the Sense HAT in the provided color (R, G, B)
 
     Args:
-        color (Tuple[int, int, in], optional): The (R, G, B) color value to draw the check mark in. Defaults to (0, 255, 0).
+        color (Tuple[int, int, in], optional): The (R, G, B) color value to draw the
+            check mark in. Defaults to (0, 255, 0).
     """
 
     SENSE_HAT.clear()
 
     X = color
-    O = (0, 0, 0)  # blank
+    empty = (0, 0, 0)  # blank
 
     # fmt: off
     logo = [
-        O, O, O, O, O, O, O, O, 
-        O, O, O, O, O, O, O, O,
-        O, O, O, O, O, O, O, O, 
-        O, O, O, O, O, O, O, X,
-        O, O, O, O, O, O, X, O,
-        O, X, O, O, O, X, O, O,
-        O, O, X, O, X, O, O, O,
-        O, O, O, X, O, O, O, O,
+        empty, empty, empty, empty, empty, empty, empty, empty,
+        empty, empty, empty, empty, empty, empty, empty, empty,
+        empty, empty, empty, empty, empty, empty, empty, empty,
+        empty, empty, empty, empty, empty, empty, empty, X,
+        empty, empty, empty, empty, empty, empty, X, empty,
+        empty, X, empty, empty, empty, X, empty, empty,
+        empty, empty, X, empty, X, empty, empty, empty,
+        empty, empty, empty, X, empty, empty, empty, empty,
     ]
     # fmt: on
 
@@ -57,26 +58,27 @@ def draw_x(color: Tuple[int, int, int] = (255, 0, 0)):
     """Draw an X on the Sense HAT in the provided color (R, G, B)
 
     Args:
-        color (Tuple[int, int, in], optional): The (R, G, B) color value to draw the check mark in. Defaults to (255, 0, 0).
+        color (Tuple[int, int, in], optional): The (R, G, B) color value to draw
+            the check mark in. Defaults to (255, 0, 0).
     """
 
     SENSE_HAT.clear()
 
     X = color
-    O = (0, 0, 0)  # blank
+    empty = (0, 0, 0)  # blank
 
     # fmt: off
     logo = [
-        O, O, O, O, O, O, O, O, 
-        O, O, O, O, O, O, O, O,
-        O, X, O, O, O, O, X, O, 
-        O, O, X, O, O, X, O, O,
-        O, O, O, X, X, O, O, O,
-        O, O, O, X, X, O, O, O,
-        O, O, X, O, O, X, O, O,
-        O, X, O, O, O, O, X, O,
+        empty, empty, empty, empty, empty, empty, empty, empty,
+        empty, empty, empty, empty, empty, empty, empty, empty,
+        empty, X, empty, empty, empty, empty, X, empty,
+        empty, empty, X, empty, empty, X, empty, empty,
+        empty, empty, empty, X, X, empty, empty, empty,
+        empty, empty, empty, X, X, empty, empty, empty,
+        empty, empty, X, empty, empty, X, empty, empty,
+        empty, X, empty, empty, empty, empty, X, empty,
     ]
-    # fmt: on
+    # fmt: emptyn
 
     SENSE_HAT.set_pixels(logo)
 
