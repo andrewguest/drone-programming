@@ -32,3 +32,25 @@ jobs:
         with:
           configuration: "--check --diff --color"
           requirementsFiles: "requirements.txt"
+
+  flake8-lint:
+    runs-on: ubuntu-latest
+    name: Flake8 checks
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v3
+
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
+
+  mypy-checks:
+    name: Type check with mypy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run mypy checks
+        uses: jpetrucciani/mypy-check@master
+        with:
+          mypy_flags: "--config-file pyproject.toml"

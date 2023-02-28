@@ -15,9 +15,7 @@ async def configure_and_takeoff(drone: System, altitude_feet):
     Returns:
         None
     """
-    await drone.action.set_takeoff_altitude(
-        converters.convert_feet_to_meters(altitude_feet)
-    )
+    await drone.action.set_takeoff_altitude(converters.convert_feet_to_meters(altitude_feet))
     await drone.action.takeoff()
 
 

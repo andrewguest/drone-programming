@@ -96,11 +96,7 @@ async def run():
 
 async def print_mission_progress(drone):
     async for mission_progress in drone.mission.mission_progress():
-        print(
-            f"Mission progress: "
-            f"{mission_progress.current}/"
-            f"{mission_progress.total}"
-        )
+        print(f"Mission progress: " f"{mission_progress.current}/" f"{mission_progress.total}")
 
 
 async def observe_is_in_air(drone, running_tasks):
